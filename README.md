@@ -1,2 +1,2 @@
 # The-Eye-of-Sahara
-Website modules
+Website modules for "The Eye of Sahara" movie project
