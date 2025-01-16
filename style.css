@@ -1,0 +1,58 @@
+body {
+    margin: 0;
+    background-color: #000011;
+}
+
+header, footer {
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 10px 0;
+    height: 10vh;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: white;
+    margin: 10px;
+}
+
+#globeViz {
+    width: 60vw;
+    height: 60vw;
+}
+
+
+#description {
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 10px 0;
+    margin: 10px;
+    width: 20vw;
+    height: 600px;
+}
+
+#column-right {
+    width: 20vw;
+    display: flex;
+    flex-direction: column;
+}
+
+#videoplayer, #roadmap, #survey {
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 10px 0;
+    margin: 10px;
+    height: 200px;
+}
