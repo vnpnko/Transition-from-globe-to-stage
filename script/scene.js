@@ -1,7 +1,5 @@
 import {WebGLRenderer, PerspectiveCamera, Scene} from 'three';
-// orbit controls
 import {OrbitControls} from 'three/addons/controls/OrbitControls.js';
-
 import {LumaSplatsThree} from '@lumaai/luma-web';
 
 document.getElementById('introVideo').addEventListener('ended', function() {
