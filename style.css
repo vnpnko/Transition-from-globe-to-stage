@@ -44,6 +44,15 @@ main {
     transform: translate(-50%, -50%);
 }
 
+#introVideo {
+    margin-top: -10px;
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 #description {
     width: 400px;
     height: 800px;

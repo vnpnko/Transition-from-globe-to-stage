@@ -4,6 +4,10 @@ import {OrbitControls} from 'three/addons/controls/OrbitControls.js';
 
 import {LumaSplatsThree} from '@lumaai/luma-web';
 
+document.getElementById('introVideo').addEventListener('ended', function() {
+    this.style.display = 'none';
+});
+
 let renderer = new WebGLRenderer();
 
 renderer.domElement.style.position = 'fixed';
