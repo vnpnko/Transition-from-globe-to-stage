@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Transition-from-globe-to-stage</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="//unpkg.com/globe.gl"></script>
+</head>
+<body>
+    <script type="importmap">
+        {
+            "imports": {
+            "three": "https://unpkg.com/three@0.157.0/build/three.module.js",
+            "three/addons/": "https://unpkg.com/three@0.157.0/examples/jsm/",
+            "@lumaai/luma-web": "https://unpkg.com/@lumaai/luma-web@0.2.0/dist/library/luma-web.module.js"
+        }
+        }
+    </script>
+    <header>
+        <a href="http://localhost:63342/Transition-from-globe-to-stage/index.html">
+            The Eye of Sahara
+        </a>
+    </header>
+    <main>
+        <div id="description">
+            <p>Description</p>
+        </div>
+        <div id="column-right">
+            <div id="videoplayer">
+                <p>Videoplayer</p>
+            </div>
+            <div id="roadmap">
+                <p>Roadmap</p>
+            </div>
+            <div id="survey">
+                <p>Survey</p>
+            </div>
+        </div>
+    </main>
+    <div id="stage"></div>
+    <footer>
+        <p>©Copyright by nobody</p>
+    </footer>
+
+    <script type="module" src="script/scene.js"></script>
+</body>
+</html>

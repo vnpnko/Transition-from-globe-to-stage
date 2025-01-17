@@ -1,6 +1,19 @@
 body {
     margin: 0;
     background-color: #000011;
+    color: white;
+}
+
+header {
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    width: 100%;
+}
+
+footer {
+    position: relative;
+    z-index: 2;
 }
 
 header, footer {
@@ -8,51 +21,54 @@ header, footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
-    color: white;
-    padding: 10px 0;
-    height: 10vh;
+    height: 80px;
+}
+
+a {
+    color: #ffffff;
 }
 
 main {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
-    color: white;
-    margin: 10px;
+    margin-top: 90px;
+    margin-bottom: 10px;
 }
 
-#globeViz {
-    width: 60vw;
-    height: 60vw;
+#globe {
+    margin-top: 10px;
+    position: fixed;
+    z-index: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
-
 
 #description {
-    background-color: #333;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 10px 0;
-    margin: 10px;
-    width: 20vw;
-    height: 600px;
+    width: 400px;
+    height: 800px;
+    position: relative;
+    z-index: 1;
 }
 
 #column-right {
-    width: 20vw;
     display: flex;
     flex-direction: column;
+    position: relative;
+    z-index: 1;
 }
 
 #videoplayer, #roadmap, #survey {
-    background-color: #333;
+    width: 400px;
+    height: 300px;
+}
+
+#description, #videoplayer, #roadmap, #survey {
+    background-color: #4877d6;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     padding: 10px 0;
     margin: 10px;
-    height: 200px;
 }
