@@ -15,23 +15,35 @@ const arcsData = [
     }
 ];
 
-const marker =
-    `
-        <div style="transform: translate(-50%, -50%) translateX(-15px) translateY(10px) ">
-          <img src="assets/globe/geotag.png" alt="Geotag" style="width:50px; height:50px" />
-        </div>
-    `;
+const locations = [
+    {
+        "lat": 21.2339,
+        "lng": -11.0653,
+        "label": "Mauritania",
+        "url": "https://vnpnko.github.io/Transition-from-globe-to-stage/scene.html?location=Mauritania",
+        "source": "https://lumalabs.ai/capture/03ee0b55-1832-4eed-ab2a-366159ba926e?mode=sparkles"
+    },
+    {
+        "lat": 47.2954,
+        "lng": 19.0207,
+        "label": "Budapest",
+        "url": "https://vnpnko.github.io/Transition-from-globe-to-stage/scene.html?location=Budapest",
+        "source": "https://lumalabs.ai/capture/71dd63ee-ab2b-473b-a57b-b51bc8020b24"
+    },
+    {
+        "lat": 37.5903,
+        "lng": 23.4341,
+        "label": "Athens",
+        "url": "https://vnpnko.github.io/Transition-from-globe-to-stage/scene.html?location=Athens",
+        "source": "https://lumalabs.ai/capture/b7a45371-3e4c-4e3b-87aa-b038d387ae2c"
+    }
+];
 
 const globe = new Globe(document.getElementById('globe'))
     .globeImageUrl('assets/globe/earth_surface_old.jpg')
     .backgroundImageUrl("assets/globe/night-sky.png")
-
-    // labels
-    .labelText('label')
-    .labelSize(2)
-    .labelColor(() => "red")
-    .labelDotOrientation('top')
-    .onLabelClick(d => window.open(d.url, '_self'))
+    .labelsData(locations)
+    .htmlElementsData(locations)
 
     // arcs
     .arcsData(arcsData)
@@ -42,7 +54,13 @@ const globe = new Globe(document.getElementById('globe'))
     // geotags
     .htmlElement(d => {
         const el = document.createElement('div');
-        el.innerHTML = marker;
+        el.innerHTML =
+        `
+        <div style="transform: translate(-50%, -50%) translateX(-15px) translateY(70px)">
+          <img src="assets/globe/geotag.png" alt="Geotag" style="width:50px; height:50px;" />
+          <p style="transform: translateY(-35px); font-size: 20px; color: red; font-weight: bold;">${d.label}</p>
+        </div>
+        `;
         el.style.width = '10px';
         el.style['pointer-events'] = 'auto';
         el.style.cursor = 'pointer';
@@ -68,11 +86,13 @@ new THREE.TextureLoader().load('assets/globe/clouds_compressed.png', cloudsTextu
     })();
 });
 
-fetch('data/locations.json')
-    .then(r => r.json())
-    .then(landingSites => {
-    globe
-        .labelsData(landingSites)
-        .htmlElementsData(landingSites);
-});
+
+
+// fetch('data/locations.json')
+//     .then(r => r.json())
+//     .then(landingSites => {
+//     globe
+//         .labelsData(landingSites)
+//         .htmlElementsData(landingSites);
+// });
 
