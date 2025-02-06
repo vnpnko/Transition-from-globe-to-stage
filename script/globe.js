@@ -40,8 +40,8 @@ const locations = [
 ];
 
 const globe = new Globe(document.getElementById('globe'))
-    .globeImageUrl('assets/globe/earth_surface_old.jpg')
-    .backgroundImageUrl("assets/globe/night-sky.png")
+    .globeImageUrl("https://vnpnko.github.io/Transition-from-globe-to-stage/assets/globe/earth_surface_old.jpg")
+    .backgroundImageUrl("https://vnpnko.github.io/Transition-from-globe-to-stage/assets/globe/night-sky.png")
     .labelsData(locations)
     .htmlElementsData(locations)
 
@@ -57,7 +57,7 @@ const globe = new Globe(document.getElementById('globe'))
         el.innerHTML =
         `
         <div style="transform: translate(-50%, -50%) translateX(-15px) translateY(70px)">
-          <img src="assets/globe/geotag.png" alt="Geotag" style="width:50px; height:50px;" />
+          <img src="https://vnpnko.github.io/Transition-from-globe-to-stage/assets/globe/geotag.png" alt="Geotag" style="width:50px; height:50px;" />
           <p style="transform: translateY(-35px); font-size: 20px; color: red; font-weight: bold;">${d.label}</p>
         </div>
         `;
@@ -73,7 +73,7 @@ const globe = new Globe(document.getElementById('globe'))
 const CLOUDS_ALT = 0.004;
 const CLOUDS_ROTATION_SPEED = -0.006;
 
-new THREE.TextureLoader().load('assets/globe/clouds_compressed.png', cloudsTexture => {
+new THREE.TextureLoader().load('https://vnpnko.github.io/Transition-from-globe-to-stage/assets/globe/clouds_compressed.png', cloudsTexture => {
     const clouds = new THREE.Mesh(
         new THREE.SphereGeometry(globe.getGlobeRadius() * (1 + CLOUDS_ALT), 75, 75),
         new THREE.MeshPhongMaterial({ map: cloudsTexture, transparent: true })
@@ -85,14 +85,4 @@ new THREE.TextureLoader().load('assets/globe/clouds_compressed.png', cloudsTextu
         requestAnimationFrame(rotateClouds);
     })();
 });
-
-
-
-// fetch('data/locations.json')
-//     .then(r => r.json())
-//     .then(landingSites => {
-//     globe
-//         .labelsData(landingSites)
-//         .htmlElementsData(landingSites);
-// });
 
